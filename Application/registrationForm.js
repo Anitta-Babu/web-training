@@ -2,6 +2,7 @@ document
   .getElementById("registrationFormDiv")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    console.log("Hai");
 
     if (emailValidation() && contactNumberValidation()) {
       alert("Registration done successful");
@@ -41,7 +42,7 @@ function contactNumberValidation() {
   );
   const contactNumberElement = document.getElementById("ContactNumber").value;
 
-  if (contactNumber.length === 10) {
+  if (contactNumberElement.length === 10) {
     contactNumberErrorMessageElement.textContent = "";
     return true;
   } else {

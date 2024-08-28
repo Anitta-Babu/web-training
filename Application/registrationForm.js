@@ -5,7 +5,7 @@ document
     console.log("Hai");
 
     if (emailValidation() && contactNumberValidation()) {
-      alert("Registration done successful");
+      alert("Registration done successfully");
       location.replace("home.html");
     } else {
       alert("Registration not successful");

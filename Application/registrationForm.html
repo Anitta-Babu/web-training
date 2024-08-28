@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Form Application</title>
+    <link rel="stylesheet" href="registrationForm.css" />
+  </head>
+  <body>
+    <div id="registrationFormDiv">
+      <h1>Student Registration Form</h1>
+      <form>
+        <label for="Name"
+          >Student Name<span><sup>*</sup></span></label
+        >
+        <input id="Name" type="text" required autocomplete="off" />
+
+        <label for="Email"
+          >Student Email<span><sup>*</sup></span></label
+        >
+        <input
+          id="Email"
+          type="email"
+          required
+          autocomplete="off"
+          placeholder="Eg:example@gmai.com"
+        />
+        <span id="emailErrorMessage"></span><br /><br />
+
+        <label for="ContactNumber"
+          >Student Contact No.<span><sup>*</sup></span></label
+        >
+        <input
+          id="ContactNumber"
+          type="tel"
+          required
+          autocomplete="off"
+          placeholder="Eg:1234567890"
+        />
+        <span id="contactNumberErrorMessage,"></span><br /><br />
+
+        <label for="Password"
+          >Create A Password<span><sup>*</sup></span></label
+        >
+        <input
+          id="Password"
+          type="password"
+          required
+          autocomplete="off"
+          minlength="8"
+          placeholder="Eg: example@231"
+        />
+        <input type="checkbox" onclick="showPassword()" />Show Password<br /><br />
+
+        <button>Submit</button>
+      </form>
+    </div>
+    <script src="registrationForm.js"></script>
+  </body>
+</html>

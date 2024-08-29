@@ -4,7 +4,7 @@ document
     event.preventDefault();
     console.log("Hai");
 
-    if (emailValidation() && contactNumberValidation()) {
+    if (isValidEmail() && isValidContactNumber()) {
       alert("Registration done successfully");
       location.replace("home.html");
     } else {
@@ -22,7 +22,7 @@ function showPassword() {
   }
 }
 
-function emailValidation() {
+function isValidEmail() {
   const errorMessageElement = document.getElementById("emailErrorMessage");
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
   const emailElement = document.getElementById("Email").value;
@@ -36,7 +36,7 @@ function emailValidation() {
   }
 }
 
-function contactNumberValidation() {
+function isValidContactNumber() {
   const contactNumberErrorMessageElement = document.getElementById(
     "contactNumberErrorMessage"
   );

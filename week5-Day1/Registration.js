@@ -31,16 +31,6 @@ document
     }
   });
 
-function showPassword() {
-  const passwordElement = document.getElementById("Password");
-
-  if (passwordElement.type === "password") {
-    passwordElement.type = "text";
-  } else {
-    passwordElement.type = "password";
-  }
-}
-
 function isValidEmail(emailElement) {
   const errorMessageElement = document.getElementById("emailErrorMessage");
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

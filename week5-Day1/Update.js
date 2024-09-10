@@ -37,7 +37,7 @@ function isValidEmail(emailElement) {
     errorMessageElement.textContent = "";
     return true;
   } else {
-    errorMessageElement.textContent = "Please enter a valid email address.";
+    errorMessageElement.textContent = "Please enter a valid email address";
     return false;
   }
 }
@@ -52,7 +52,7 @@ function isValidContactNumber(customerPhoneElement) {
     return true;
   } else {
     contactNumberErrorMessageElement.textContent =
-      "Please enter a valid phone number.";
+      "Please enter a valid phone number";
     return false;
   }
 }
@@ -65,12 +65,6 @@ document.getElementById("submit").addEventListener("click", (event) => {
   const customerEmailElement = document.getElementById("email").value;
   const customerPhoneElement = document.getElementById("phone").value;
   const customerUserNameElement = document.getElementById("username").value;
-  console.log(
-    customerNameElement,
-    customerEmailElement,
-    customerPhoneElement,
-    customerUserNameElement
-  );
 
   if (
     isValidEmail(customerEmailElement) &&
@@ -80,26 +74,21 @@ document.getElementById("submit").addEventListener("click", (event) => {
     const customerEmailElement = document.getElementById("email").value;
     const customerPhoneElement = document.getElementById("phone").value;
     const customerUserNameElement = document.getElementById("username").value;
-    if (
-      isValidEmail(customerEmailElement) &&
-      isValidContactNumber(customerPhoneElement)
-    ) {
-      const newUser = {
-        name: customerNameElement,
-        username: customerUserNameElement,
-        email: customerEmailElement,
-        phone: customerPhoneElement,
-      };
-      console.log(customerId);
 
-      fetch(`http://localhost:3000/employee/${customerId}`, {
-        method: "PUT",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      });
-    }
+    const newUser = {
+      name: customerNameElement,
+      username: customerUserNameElement,
+      email: customerEmailElement,
+      phone: customerPhoneElement,
+    };
+
+    fetch(`http://localhost:3000/employee/${customerId}`, {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    });
   }
 });
 

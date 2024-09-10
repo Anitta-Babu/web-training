@@ -43,8 +43,6 @@ fetch("http://localhost:3000/employee")
         .addEventListener("click", function (event) {
           console.log(data[index].id);
           customerDelete(data[index].id);
-
-          //window.location.replace(`Registration.html?id=${data[index].id}`);
         });
     });
   })

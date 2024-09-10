@@ -1,5 +1,6 @@
 #registrationFormDiv,
-#homePage {
+#tableDiv,
+#updationDiv {
   font-family: Arial, Helvetica, sans-serif;
   background-color: rgb(185, 240, 240);
   border-radius: 45px;
@@ -24,8 +25,7 @@ body {
 
 input[type="text"],
 input[type="email"],
-input[type="tel"],
-input[type="password"] {
+input[type="tel"] {
   width: 100%;
   padding: 10px;
   margin: 5px 0 15px;

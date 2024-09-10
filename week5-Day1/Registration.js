@@ -1,35 +1,34 @@
-document
-  .getElementById("registrationDiv")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
-    const customerNameElement = document.getElementById("name").value;
-    const customerEmailElement = document.getElementById("email").value;
-    const customerPhoneElement = document.getElementById("phone").value;
-    const customerUserNameElement = document.getElementById("username").value;
-    if (
-      isValidEmail(customerEmailElement) &&
-      isValidContactNumber(customerPhoneElement)
-    ) {
-      const newUser = {
-        name: customerNameElement,
-        username: customerUserNameElement,
-        email: customerEmailElement,
-        phone: customerPhoneElement,
-      };
+document.getElementById("submit").addEventListener("click", function (event) {
+  event.preventDefault();
+  const customerNameElement = document.getElementById("name").value;
+  const customerEmailElement = document.getElementById("email").value;
+  const customerPhoneElement = document.getElementById("phone").value;
+  const customerUserNameElement = document.getElementById("username").value;
+  if (
+    isValidEmail(customerEmailElement) &&
+    isValidContactNumber(customerPhoneElement)
+  ) {
+    const newUser = {
+      name: customerNameElement,
+      username: customerUserNameElement,
+      email: customerEmailElement,
+      phone: customerPhoneElement,
+    };
 
-      fetch("http://localhost:3000/employee", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(newUser),
-      });
+    fetch("http://localhost:3000/employee", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(newUser),
+    }).then((response) => {
       alert("Registration done successfully");
-      location.replace("table.html");
-    } else {
-      alert("Registration not successful");
-    }
-  });
+    });
+    window.location.replace("table.html");
+  } else {
+    alert("Registration not successful");
+  }
+});
 
 function isValidEmail(emailElement) {
   const errorMessageElement = document.getElementById("emailErrorMessage");

@@ -1,3 +1,8 @@
+//-------Home Part-------------------------------------------------------------------------------------------
+document.getElementById("home").addEventListener("click", function (event) {
+  window.location.replace("table.html");
+});
+//------Registration Part-------------------------------------------------------------------------------------
 document.getElementById("submit").addEventListener("click", function (event) {
   event.preventDefault();
   const customerNameElement = document.getElementById("name").value;
@@ -21,15 +26,21 @@ document.getElementById("submit").addEventListener("click", function (event) {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newUser),
-    }).then((response) => {
-      alert("Registration done successfully");
-    });
-    window.location.replace("table.html");
-  } else {
-    alert("Registration not successful");
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Registration done successfully");
+        } else {
+          alert("Registration not successful");
+        }
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 });
 
+//-----------Email and contact Varification -------------------------------------------------------------------
 function isValidEmail(emailElement) {
   const errorMessageElement = document.getElementById("emailErrorMessage");
   const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;

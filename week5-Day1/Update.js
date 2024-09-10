@@ -58,6 +58,12 @@ function isValidContactNumber(customerPhoneElement) {
 }
 //---------------------------------------------------------------------------------------------------------------------------------
 
+//-------Home Part-----------------------------------------------------------------------------------------------------------------
+document.getElementById("home").addEventListener("click", function (event) {
+  window.location.replace("table.html");
+});
+//---------------------------------------------------------------------------------------------------------------------------------
+
 //--------------------------------------------------------Part for Update-----------------------------------------------------------
 document.getElementById("submit").addEventListener("click", (event) => {
   event.preventDefault();
@@ -88,7 +94,17 @@ document.getElementById("submit").addEventListener("click", (event) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(newUser),
-    });
+    })
+      .then((response) => {
+        if (response.ok) {
+          alert("Updating done successfully");
+        } else {
+          alert("Updating  unsuccessful");
+        }
+      })
+      .catch((error) => {
+        alert(error);
+      });
   }
 });
 

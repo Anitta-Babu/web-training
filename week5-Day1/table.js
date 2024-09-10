@@ -58,11 +58,14 @@ function customerDelete(customerId) {
     method: "DELETE",
   })
     .then((response) => {
-      console.log(response.status);
-      window.location.replace("table.html");
+      if (response.ok) {
+        window.location.replace("table.html");
+      } else {
+        alert("Deletion not done");
+      }
     })
     .catch((error) => {
-      console.log(error);
+      alert(error);
     });
 }
 //--------------------------------------------------------------------------------------------------------------------------
